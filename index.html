@@ -1,0 +1,615 @@
+<!DOCTYPE HTML>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Lista Kurniawati — Portfolio</title>
+    <meta name="description" content="Portfolio Data Analyst & Business Analyst — analitik data pendidikan, machine learning, dan insight untuk keputusan strategis." />
+
+    <!-- Solid State core CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Simple brand accent override (optional) -->
+    <style>
+      :root {
+        --brand-primary: #336371; /* Deep teal slate */
+        --brand-accent:  #93AF56; /* Olive green */
+        --brand-bg:      #F3F2C9; /* Light pastel sand */
+        --brand-soft:    #F0D587; /* Warm sand */
+      }
+      .accent { color: var(--brand-accent); }
+      .button.primary { background: var(--brand-primary); }
+      .spotlight .content h2 span { color: var(--brand-accent); }
+      .logo strong { color: var(--brand-accent); }
+      /* Avatar kecil di banner */
+      #banner .logo.avatar{
+        width:216px;
+        height:216px;
+        border-radius:999px;
+        overflow:hidden;
+        background:#fff;
+        border:2px solid rgba(147,175,86,.45);
+        box-shadow:0 6px 16px rgba(0,0,0,.10);
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        margin-bottom:.75rem; /* jarak dari judul */
+      }
+
+      #banner .logo.avatar img{
+        width:100%;
+        height:100%;
+        object-fit:cover;    /* crop rapi */
+        display:block;
+        border-radius:inherit;
+      }
+
+      /* Sedikit lebih kecil di layar mungil */
+      @media (max-width:480px){
+        #banner .logo.avatar{ width:60px; height:60px; }
+      }
+
+      /* Card-ish helpers */
+      .card { background: rgba(255,255,255,0.03); border-radius: 0.5rem; padding: 1.5rem; }
+      .badge { display:inline-block; padding:.25rem .6rem; border:1px solid rgba(255,255,255,.25); border-radius:999px; font-size:.8rem; margin:.2rem .25rem 0 0; }
+      .grid { display:grid; gap:1.25rem; }
+      .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      @media (max-width: 980px){ .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+          /* Make certification cards feel clickable */
+      .link-card .button.small { margin-top: .5rem; }
+      .card:hover { border-color: rgba(43,182,168,.45); box-shadow: 0 6px 20px rgba(0,0,0,.2); transform: translateY(-2px); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+      /* Make certification cards feel clickable */
+      .link-card .button.small { margin-top: .5rem; }
+      .card:hover { border-color: rgba(43,182,168,.45); box-shadow: 0 6px 20px rgba(0,0,0,.2); transform: translateY(-2px); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+      /* Clickable project cards */
+      .link-card { display:block; text-decoration:none; color:inherit; position:relative; }
+      .link-card:focus { outline: 2px solid var(--brand-accent); outline-offset: 3px; border-radius: 8px; }
+      .card .actions-inline { margin-top:.75rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+      .card .actions-inline .button.small { padding:.5rem .85rem; }
+      /* Make certification cards feel clickable */
+      .link-card .button.small { margin-top: .5rem; }
+      .card:hover { border-color: rgba(43,182,168,.45); box-shadow: 0 6px 20px rgba(0,0,0,.2); transform: translateY(-2px); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+      /* Clickable project cards */
+      .link-card { display:block; text-decoration:none; color:inherit; position:relative; }
+      .link-card:focus { outline: 2px solid var(--brand-accent); outline-offset: 3px; border-radius: 8px; }
+      .card .actions-inline { margin-top:.75rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+      .card .actions-inline .button.small { padding:.5rem .85rem; }
+      /* ===== Buttons vertical centering & equal height ===== */
+      .button, .button.small { display:inline-flex; align-items:center; justify-content:center; line-height:1.1; }
+      .card .actions-inline { align-items:center; gap:.75rem; }
+      .card .actions-inline .button.small { min-height:44px; padding:.6rem 1rem; }
+      /* Make certification cards feel clickable */
+      .link-card .button.small { margin-top: .5rem; }
+      .card:hover { border-color: rgba(43,182,168,.45); box-shadow: 0 6px 20px rgba(0,0,0,.2); transform: translateY(-2px); transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+      /* Clickable project cards */
+      .link-card { display:block; text-decoration:none; color:inherit; position:relative; }
+      .link-card:focus { outline: 2px solid var(--brand-accent); outline-offset: 3px; border-radius: 8px; }
+      .card .actions-inline { margin-top:.75rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+      .card .actions-inline .button.small { padding:.5rem .85rem; }
+      /* ===== Buttons vertical centering & equal height ===== */
+      .button, .button.small { display:inline-flex; align-items:center; justify-content:center; line-height:1.1; }
+      .card .actions-inline { align-items:center; gap:.75rem; }
+      .card .actions-inline .button.small { min-height:44px; padding:.6rem 1rem; }
+      /* ===== Hero (Banner) Typography Hierarchy ===== */
+      #banner .inner h1 { font-size: clamp(2.75rem, 6vw, 4.75rem); font-weight: 800; letter-spacing: .4px; text-transform: none; margin-bottom: .35rem; }
+      #banner .inner h2 { font-size: clamp(1.15rem, 3.2vw, 1.75rem); font-weight: 600; text-transform: none; opacity: .92; margin: .25rem 0 1.2rem; }
+      #banner .inner p.tagline { font-size: clamp(1rem, 2.2vw, 1.15rem); line-height: 1.6; opacity: .9; max-width: 60ch; text-transform: none; }
+      /* ===== Static top nav (no slide-out) ===== */
+      #header .topnav ul { list-style:none; margin:0; padding:0; display:flex; gap:1rem; align-items:center; }
+      #header .topnav a { text-decoration:none; border:0; padding:.4rem .6rem; border-radius:.5rem; opacity:.9; }
+      #header .topnav a:hover { background: rgba(255,255,255,.08); opacity:1; }
+      @media (max-width: 980px) {
+        #header .topnav ul { gap:.5rem; flex-wrap:wrap; justify-content:flex-end; }
+        #header .topnav a { padding:.35rem .5rem; font-size:.95rem; }
+      }
+      /* ===== Brand palette (from user) ===== */
+      a { color: var(--brand-accent); }
+      a:hover { opacity: .9; filter: saturate(1.05); }
+      .button.primary { background: var(--brand-primary); border-color: transparent; }
+      .badge { border-color: rgba(168,187,163,.35); }
+      .card:hover { border-color: rgba(168,187,163,.45); }
+      /* Hero gradient using brand tones */
+      #banner { background-image: radial-gradient(1200px 600px at 15% 10%, rgba(168,187,163,.12), transparent 60%), linear-gradient(180deg, rgba(0,0,0,.05), transparent 40%); }
+      /* Light themed section helpers */
+      .theme-light { background: var(--brand-bg); color: #2b2b2b; }
+      .theme-light .major { color: #1f1f1f; }
+      .theme-light .card { background: var(--brand-soft); color:#1e1e1e; border: 1px solid rgba(0,0,0,.06); }
+      .theme-light .badge { border-color: rgba(184,124,76,.35); }
+      html { scroll-behavior: smooth; }
+      /* ==== Palette override (light theme, earthy text) ==== */
+      body, #page-wrapper { color:#1f2328; }
+      a { color:#336371; }
+      a:hover { opacity:.95; }
+      .accent { color: var(--brand-accent); }
+      .button.primary { background: var(--brand-primary); border-color: transparent; }
+      .button.primary:hover { filter: brightness(.96); }
+      /* Cards now for light theme */
+      .card { background:#fff; border:1px solid rgba(0,0,0,.06); }
+      .card:hover { border-color: rgba(147,175,86,.45); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+      .badge { border:1px solid rgba(147,175,86,.35); }
+      /* Hero background using new palette */
+      #banner { background-image: radial-gradient(1200px 600px at 15% 10%, rgba(240,213,135,.20), transparent 60%), linear-gradient(180deg, var(--brand-bg), #ffffff 60%); }
+      /* Light themed sections */
+      .theme-light { background: var(--brand-bg); color:#1f2328; }
+      .theme-light .card { background:#fff; border:1px solid rgba(0,0,0,.06); }
+      .theme-light .badge { border-color: rgba(51,99,113,.28); }
+      /* Header nav on light bg */
+      #header .topnav a:hover { background: rgba(51,99,113,.08); }
+      /* === Global palette enforcement (uniform across sections) === */
+      body, #page-wrapper { background:#ffffff; color:#1f2328; }
+      .wrapper { background:#ffffff; }
+      .wrapper.alt { background: var(--brand-bg); }
+      #footer { background: var(--brand-bg); color:#1f2328; }
+      .major { color:#1f2328; }
+      /* Cards & badges unified */
+      .card { background:#ffffff; border:1px solid rgba(0,0,0,.06); }
+      .card:hover { border-color: rgba(147,175,86,.45); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+      .badge { border:1px solid rgba(147,175,86,.35); }
+      /* Neutralize Solid State dark stripes */
+      .spotlight, .features { background: transparent; }
+      /* Buttons keep primary/secondary contrast on light bg */
+      .button { color:#1f2328; }
+      .button.primary { color:#ffffff; background: var(--brand-primary); border-color: var(--brand-primary); }
+      /* Hero gradient tuned to new palette */
+      #banner { background-image: radial-gradient(1200px 600px at 15% 10%, rgba(240,213,135,.20), transparent 60%), linear-gradient(180deg, var(--brand-bg), #ffffff 60%); }
+      /* === Force hero text to earthy dark for readability === */
+      #banner .inner h1,
+      #banner .inner h2,
+      #banner .inner p,
+      #banner .inner .tagline { color:#1f2328 !important; text-shadow:none !important; }
+      #banner .inner h2 { opacity:1 !important; }
+      #banner .inner .accent { color: var(--brand-accent) !important; }
+      /* === Force hero text to earthy dark for readability (stronger specificity) === */
+      #banner .inner h1,
+      #banner .inner h1 *,
+      #banner .inner h2,
+      #banner .inner h2 *,
+      #banner .inner p.tagline,
+      #banner .inner p.tagline * { color:#1f2328 !important; }
+      #banner .inner * { text-shadow:none !important; opacity:1 !important; }
+      #banner .inner .accent { color: var(--brand-accent) !important; }
+      /* === Olive section divider & icon/link accent === */
+      .section-divider { height:1px; background: rgba(147,175,86,.35); margin: 2.5rem auto; width: min(1100px, calc(100% - 3rem)); border-radius:999px; }
+      #contact .contact .icon:before, #footer .contact .icon:before { color: var(--brand-accent); }
+      #header .topnav a { color:#1f2328; }
+      #header .topnav a:hover { color:#1f2328; background: rgba(51,99,113,.08); }
+      /* === Nav active (scroll-spy) & button icons === */
+      #header .topnav a.active { background: rgba(147,175,86,.25); color:#1f2328; font-weight:600; }
+      .button .icon { margin-right:.5rem; line-height:0; }
+      .actions-inline .button { display:inline-flex; align-items:center; gap:.35rem; }
+      /* === Fix: remove diagonal wedges from Solid State wrappers === */
+      .wrapper:before, .wrapper:after, .wrapper.alt:before, .wrapper.alt:after { display:none !important; }
+      /* === Ensure readable text for strong/em across sections === */
+      strong, b, em, i { color:#1f2328 !important; }
+      /* === Light cards everywhere (override Solid State .features article) === */
+      .features article, .card { background:#ffffff !important; color:#1f2328 !important; border:1px solid rgba(0,0,0,.06) !important; }
+      .features article:hover, .card:hover { border-color: rgba(147,175,86,.45) !important; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+      .features article h3, .card h3 { color:#1f2328 !important; }
+      .features article ul li { color:#1f2328 !important; }
+      /* === Nav active style: underline (avoid big highlight block) === */
+      #header .topnav a.active { background:none !important; border-bottom:2px solid var(--brand-accent); border-radius:0; }
+      /* === FIX 1: anchor offset so content doesn't sit under header === */
+      section[id] { scroll-margin-top: 96px; }
+      /* === FIX 2: contact form visibly styled on light theme === */
+      #contact .split.style1 { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: start; }
+      @media (max-width: 980px){ #contact .split.style1 { grid-template-columns: 1fr; } }
+      #contact input, #contact textarea { background:#ffffff; color:#1f2328; border:1px solid rgba(0,0,0,.18); box-shadow: none; }
+      #contact label { color:#1f2328; opacity:.9; }
+      #contact ::placeholder { color: rgba(31,35,40,.55); }
+      /* === FIX 3: About text (strong/em) readable === */
+      #about strong, #about b, #about em, #about i { color:#1f2328 !important; text-shadow:none !important; }
+      /* === FIX 4: navbar underline tidy === */
+      #header .topnav a { position:relative; padding-bottom:.4rem; }
+      #header .topnav a.active { border-bottom:2px solid var(--brand-accent); }
+      /* Optional: soften section divider spacing near header */
+      .section-divider { margin: 2rem auto; }
+      /* === Divider subtler + remove active pill in nav + submit button visible === */
+      .section-divider { height:1px; background: rgba(147,175,86,.30); width: min(960px, 92%); margin: 1.25rem auto 1.75rem; border-radius:999px; }
+      #header nav ul li a.active, #header .topnav a.active { background: transparent !important; box-shadow:none !important; border-bottom:2px solid var(--brand-accent); border-radius:0; }
+      #contact .actions { margin-top: 1rem; }
+      #contact .actions input[type="submit"].primary { background: var(--brand-primary); color:#fff; border:none; padding:.8rem 1.1rem; border-radius:.5rem; cursor:pointer; }
+      #contact .actions input[type="submit"].primary:hover { filter: brightness(.96); }
+      /* === Center submit text perfectly === */
+      #contact .actions { display:flex; align-items:center; gap:.75rem; }
+      #contact .actions input[type="submit"].primary {
+        display:inline-flex; align-items:center; justify-content:center; text-align:center;
+        background: var(--brand-primary); color:#fff; border:none; border-radius:.5rem;
+        padding:.85rem 1.25rem; line-height:1; min-width:140px; letter-spacing:.06em; font-weight:700;
+      }
+      #contact .actions input[type="submit"].primary:hover { filter: brightness(.96); }
+      /* === Soft gradient transitions between sections (independent of order) === */
+      .softfade { position: relative; overflow: hidden; }
+      .softfade::before, .softfade::after { content:""; position:absolute; left:0; right:0; height:56px; pointer-events:none; display:block !important; }
+      /* For white sections */
+      .wrapper.softfade::before { top:-1px; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,.85) 60%, #ffffff 100%); }
+      .wrapper.softfade::after  { bottom:-1px; background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,.85) 40%, rgba(255,255,255,0) 100%); }
+      /* For sand sections */
+      .wrapper.alt.softfade::before { top:-1px; background: linear-gradient(to bottom, rgba(243,242,201,0) 0%, rgba(243,242,201,.90) 60%, var(--brand-bg) 100%); }
+      .wrapper.alt.softfade::after  { bottom:-1px; background: linear-gradient(to bottom, var(--brand-bg) 0%, rgba(243,242,201,.90) 40%, rgba(243,242,201,0) 100%); }
+      /* === Gradient transitions tuning === */
+      .section-divider{ display:none; }
+      .softfade{ position:relative; overflow:visible; }
+      /* Fade from WHITE → SAND at TOP of sand sections */
+      .wrapper.alt.softfade::before{ content:""; position:absolute; left:0; right:0; top:-1px; height:80px; pointer-events:none;
+        background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,.85) 45%, rgba(255,255,255,0) 100%);
+        display:block !important; }
+      /* Fade from SAND → WHITE at BOTTOM of sand sections */
+      .wrapper.alt.softfade::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:80px; pointer-events:none;
+        background: linear-gradient(to top, #ffffff 0%, rgba(255,255,255,.85) 45%, rgba(255,255,255,0) 100%);
+        display:block !important; }
+      /* White sections don't add extra fades (handled by neighbors) */
+      .wrapper.softfade::before, .wrapper.softfade::after{ content:none !important; }
+      /* === Rework section gradients to avoid white bands === */
+      .section-divider{ display:none; }
+      .softfade{ position:relative; overflow:visible; }
+      .softfade::before{ content:""; position:absolute; left:0; right:0; top:-1px; height:48px; pointer-events:none; z-index:0; }
+      .softfade::after{ content:none !important; }
+      /* Top of ALT (sand) sections fades from WHITE → transparent over sand */
+      .wrapper.alt.softfade::before{ background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,.85) 55%, rgba(255,255,255,0) 100%); }
+      /* Top of WHITE sections fades from SAND → transparent over white */
+      .wrapper.softfade::before{ background: linear-gradient(to bottom, var(--brand-bg) 0%, rgba(243,242,201,.85) 55%, rgba(243,242,201,0) 100%); }
+      /* === Fix remaining white band: only fade when themes differ === */
+      .softfade{ position:relative; }
+      .softfade::before{ content:""; position:absolute; left:0; right:0; top:-1px; height:56px; pointer-events:none; }
+      /* Fade for boundaries: WHITE prev → SAND section */
+      .wrapper.alt.softfade::before{ background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,.85) 55%, rgba(255,255,255,0) 100%); }
+      /* Fade for boundaries: SAND prev → WHITE section */
+      .wrapper.softfade::before{ background: linear-gradient(to bottom, var(--brand-bg) 0%, rgba(243,242,201,.85) 55%, rgba(243,242,201,0) 100%); }
+      /* Do NOT fade when previous section has the same theme */
+      .wrapper.alt.softfade + .wrapper.alt.softfade::before { content:none !important; }
+      .wrapper.softfade + .wrapper.softfade::before { content:none !important; }
+      /* === Minimal decorative separator (olive, subtle) === */
+      .decor-sep{ position:relative; width:min(920px,92%); margin:2.25rem auto 2.5rem; height:16px; }
+      .decor-sep::before, .decor-sep::after{ content:""; position:absolute; top:50%; width:calc(50% - 24px); height:1px; background: linear-gradient(to right, rgba(147,175,86,0), rgba(147,175,86,.28), rgba(147,175,86,.45)); }
+      .decor-sep::before{ left:0; }
+      .decor-sep::after{ right:0; transform:scaleX(-1); }
+      .decor-sep .dot{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:8px; height:8px; border-radius:999px; background:#93AF56; box-shadow:0 0 0 5px rgba(147,175,86,.10); }
+      @media (max-width: 980px){ .decor-sep{ margin:1.5rem auto 1.75rem; } }
+      /* === Status message for contact form === */
+      .form-status{ font-size:.95rem; opacity:.95; }
+      .form-status.success{ color: var(--brand-accent); }
+      .form-status.error{ color:#b85c5c; }
+      /* === Button visibility override (brand accent for non-primary) === */
+      .button{background:var(--brand-accent);color:#1f2328;border:1px solid var(--brand-accent);border-radius:.5rem;font-weight:700;letter-spacing:.04em}
+      .button:hover{filter:brightness(.96)}
+      .button.small{padding:.55rem .95rem;font-size:.95rem}
+      .button.primary{background:var(--brand-primary);color:#fff;border:1px solid var(--brand-primary)}
+      ::selection {
+        background: rgba(147, 175, 86, .35); /* olive transparan */
+        color: #1f2328 !important;           /* teks gelap */
+      }
+      ::-moz-selection {
+        background: rgba(147, 175, 86, .35);
+        color: #1f2328 !important;
+      }
+</style>
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header" class="alt">
+        <h1 class="logo"><a href="#banner">Lista <strong>Kurniawati</strong></a></h1>
+        <nav class="topnav">
+          <ul>
+            <li><a href="#about">Tentang saya</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#certifications">Sertifikasi</a></li>
+            <li><a href="#organizations">Organisasi</a></li>
+            <li><a href="#contact">Kontak saya</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Banner / Hero -->
+      <section id="banner">
+        <div class="inner">
+          <div class="logo avatar">
+            <img src="assets/img/profile.jpg" alt="Foto Lista Kurniawati" loading="lazy" />
+          </div>
+          <h1>Lista <span class="accent">Kurniawati</span></h1>
+          <h2>Data Analyst</h2>
+          <p class="tagline">Mengubah data menjadi <strong>strategic insight</strong> yang mendorong <strong>keputusan lebih cerdas</strong> dan berdampak nyata.</p>
+          <ul class="actions">
+            <li><a href="#projects" class="button primary">Lihat Proyek</a></li>
+            <li><a href="#contact" class="button">Hubungi Saya</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="wrapper softfade">
+        <div class="inner">
+          <h2 class="major">Tentang <span>saya</span></h2>
+          <p>
+            Halo, saya <strong>Lista Kurniawati</strong>, lulusan Matematika Universitas Indonesia. Saat ini saya bekerja sebagai
+            <strong>Data Analyst</strong> di Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.
+            Saya berfokus pada <em>data science</em>, <em>machine learning</em>, dan <em>analisis kebijakan pendidikan</em>.
+            Bagi saya, data bukan hanya angka—melainkan cerita yang dapat membentuk strategi, inovasi, dan solusi nyata.
+          </p>
+          <p>
+            Portofolio ini saya susun untuk memperlihatkan pengalaman, keterampilan, dan proyek-proyek yang telah saya kerjakan,
+            sekaligus membuka ruang kolaborasi di bidang analitik dan teknologi.
+          </p>
+          <ul class="actions">
+            <li><a href="assets\Lista Kurniawati - CV.pdf" class="button">Unduh CV</a></li>
+            <li><a href="#contact" class="button">Kolaborasi</a></li>
+          </ul>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+      <!-- Experience -->
+      <section id="experience" class="wrapper alt softfade">
+        <div class="inner">
+          <h2 class="major">Pengalaman Pekerjaan</h2>
+          <section class="features">
+            <article class="card">
+              <h3>Data Analyst — BPPP Kemendikdasmen <span class="accent">(2024–Sekarang)</span></h3>
+              <p>Analisis data pendidikan secara komprehensif untuk mengidentifikasi tren dan memberikan rekomendasi strategis bagi pengambil kebijakan.</p>
+              <ul>
+                <li>Berkontribusi dalam penyusunan laporan kajian analitik yang mudah dipahami lintas pemangku kepentingan untuk tahun 2024 dan 2025.</li>
+                <li>
+                  <a href="https://research.acer.edu.au/cgi/viewcontent.cgi?article=1017&context=ical#page=60" target="_blank" rel="noopener">
+                    Menerbitkan 1 prosiding tentang peningkatan pelayanan pengujian pendidikan di ICAL 2024.
+                  </a>
+                </li>
+                <li>Berkolaborasi membuat sistem Monitoring Essay Scoring, dari pemberian akses raters, template raters, hingga dashboard progress raters dengan menggunakan Google Workspace (GAS, Google Sheet, dan Google Docs).</li>
+                <li>Membuat sistem Standard Setting sebagai pengembang (PIC), dari pemberian akses panelis, template panelis, hingga dashboard progress panelis (GAS, Google Sheet, dan Google Docs).</li>
+                <li>Membuat model regresi untuk indeksasi pendidikan dengan menggunakan Random Forest Regressor.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Financial Analyst — BPPP Kemendikbudristek <span class="accent">(2023-2024)</span></h3>
+              <p>Pengelolaan kontrak swakelola dengan lebih dari 17 perguruan tinggi dan verifikasi RAB sesuai regulasi keuangan.</p>
+              <ul>
+                <li>Koordinasi kepatuhan PMK 83/PMK.02/2022 bersama Itjen Kemendikbudristek.</li>
+                <li>Monitoring realisasi serta kelengkapan dokumen administrasi.</li>
+                <li>Mengawasi dan memastikan pemenuhan semua persyaratan kontrak swakelola tipe I untuk setiap Perguruan Tinggi Negeri (PTN) yang ditangani.</li>
+                <li>Menjalin komunikasi dan konsultasi dengan perwakilan PTN terkait perencanaan dan realisasi keuangan serta kelengkapan dokumen administrasi.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Business Analyst Intern — PT Jamkrindo <span class="accent">(2022)</span></h3>
+              <p>Mendukung analisis kinerja keuangan melalui penyusunan laporan rasio gabungan dan pembaruan laporan profitabilitas.</p>
+            </article>
+          </section>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+      <!-- Projects -->
+      <section id="projects" class="wrapper alt softfade">
+        <div class="inner">
+          <h2 class="major">Proyek</h2>
+
+          <div class="grid grid-2">
+            <!-- Card 1 -->
+            <article class="card">
+              <h3>Analisis Sentimen Vaksinasi Covid-19 (SVM)</h3>
+              <p>Memetakan sentimen publik terhadap vaksinasi menggunakan data media sosial untuk menginformasikan tren opini masyarakat.</p>
+              <p><span class="badge">Python</span> <span class="badge">scikit-learn</span> <span class="badge">NLP</span></p>
+              <div class="actions-inline">
+                <a href="https://github.com/listakurniawati/Sentiment-Analysis-of-COVID-19-Vaccination-in-Indonesia-using-SVM-Classifier/blob/main/%5BFinal%5D%20Paper_Analisis%20Sentimen%20Vaksinasi%20Covid-19%20dengan%20SVM.pdf" class="button small primary" target="_blank" rel="noopener">Detail Proyek</a>
+                <a href="https://github.com/listakurniawati/Sentiment-Analysis-of-COVID-19-Vaccination-in-Indonesia-using-SVM-Classifier" class="button small" target="_blank" rel="noopener"><span class="icon brands fa-github" aria-hidden="true"></span><span>GitHub</span></a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+              <h3>Analisis Sentimen pada Startup Edutech (CNN‑BiLSTM)</h3>
+              <p>Arsitektur deep learning untuk memahami persepsi pengguna terhadap platform edutech di Indonesia.</p>
+              <p><span class="badge">TensorFlow</span> <span class="badge">Keras</span> <span class="badge">DL</span></p>
+              <div class="actions-inline">
+                <a href="https://github.com/listakurniawati/Sentiment-Analysis-of-Edutech-Start-Up-using-CNN-BiLSTM/blob/main/Group%205%20Sentiment%20Analysis%20Project.pdf" class="button small primary" target="_blank" rel="noopener">Detail Proyek</a>
+                <a href="https://github.com/listakurniawati/Sentiment-Analysis-of-Edutech-Start-Up-using-CNN-BiLSTM" class="button small" target="_blank" rel="noopener"><span class="icon brands fa-github" aria-hidden="true"></span><span>GitHub</span></a>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+              <h3>Pemodelan Penyakit Ginjal Kronis (MLP)</h3>
+              <p>Neural network untuk mengestimasi potensi PGK berbasis indikator klinis.</p>
+              <p><span class="badge">MLP</span> <span class="badge">Modeling</span> <span class="badge">Healthcare</span></p>
+              <div class="actions-inline">
+                <a href="https://github.com/listakurniawati/Mathematical-Modelling-for-Chronic-Kidney-Disease-Detection-using-Multi-layer-Perceptron/blob/main/CKD%20Detection%20using%20MLP.pdf" class="button small primary" target="_blank" rel="noopener">Detail Proyek</a>
+                <a href="https://github.com/listakurniawati/Mathematical-Modelling-for-Chronic-Kidney-Disease-Detection-using-Multi-layer-Perceptron" class="button small" target="_blank" rel="noopener"><span class="icon brands fa-github" aria-hidden="true"></span><span>GitHub</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+      <!-- Skills -->
+      <section id="skills" class="wrapper alt softfade">
+        <div class="inner">
+          <h2 class="major">Keahlian</h2>
+          <div class="grid grid-3">
+            <div class="card">
+              <h3>Programming &amp; Tools</h3>
+              <p>
+                Python, pandas, numpy, matplotlib, scikit‑learn, TensorFlow,<br/>
+                Microsoft Excel, PowerPoint
+              </p>
+            </div>
+            <div class="card">
+              <h3>Data Science &amp; ML</h3>
+              <p>
+                Classification, Sentiment Analysis, Random Forest, Neural Networks, Model Evaluation
+              </p>
+            </div>
+            <div class="card">
+              <h3>Soft Skills</h3>
+              <p>Problem Solving, Teamwork, Communication, Time Management</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+       <!-- Certifications -->
+      <section id="certifications" class="wrapper alt softfade">
+        <div class="inner">
+          <h2 class="major">Sertifikasi</h2>
+          <div class="grid grid-2">
+            <div class="card">
+              <h3>Persatuan Aktuaris Indonesia (PAI)</h3>
+              <p><strong>A20 — Probabilitas dan Statistik</strong></p>
+              <p><span class="badge">Statistika</span><span class="badge">Aktuaria</span></p>
+              <ul class="actions">
+                <li>
+                  <a class="button small primary" href="assets/Lista Kurniawati - Sertifikasi A20.pdf" target="_blank" rel="noopener" aria-label="Lihat sertifikat PAI A20 (tautan terbuka di tab baru)">Lihat Sertifikat</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Coursera</h3>
+              <p><strong>Google Data Analytics Professional Certificate</strong></p>
+              <p><span class="badge">Data Analytics</span><span class="badge">Google</span></p>
+              <ul class="actions">
+                <li>
+                  <a class="button small primary" href="https://www.coursera.org/account/accomplishments/professional-cert/KZ4CGGUFM9H7" target="_blank" rel="noopener" aria-label="Lihat sertifikat Google Data Analytics (tautan terbuka di tab baru)">Lihat Sertifikasi</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin-top:1rem; opacity:.8; font-size:.95rem;">
+            Sertifikasi lainnya dapat dilihat di <a href="https://www.linkedin.com/in/listakurniawati/" target="_blank" rel="noopener">LinkedIn saya</a>.
+          </p>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+
+      <!-- Organizations -->
+      <section id="organizations" class="wrapper alt softfade">
+        <div class="inner">
+          <h2 class="major">Organisasi</h2>
+          <section class="features">
+            <article class="card">
+              <h3>Kepala Departemen Advokasi &amp; Kesejahteraan Mahasiswa <span class="accent">(2020–2021)</span></h3>
+              <p>Himpunan Mahasiswa Departemen Matematika</p>
+              <ul>
+                <li>Memimpin transformasi layanan advokasi & kesejahteraan.</li>
+                <li>Mengoperasikan skema DAUN (Dari dan Untuk Departemen Matematika) dengan tetap berasaskan seleksi ketat, persetujuan cepat (≤3 hari), tersalurkan ke lebih dari 5 mahasiswa.</li>
+                <li>Menuntaskan isu biaya pendidikan ≤7 hari lewat kolaborasi administrasi departemen–kampus.</li>
+                <li>Membangun pusat informasi beasiswa/BOP dan standar layanan (Tanyaksioma).</li>
+                <li>Merintis & menyelenggarakan proker kesehatan mental pertama di Departemen Matematika.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Deputi Departemen Advokasi &amp; Kesejahteraan Mahasiswa  <span class="accent">(2019-2020)</span></h3>
+              <p>Himpunan Mahasiswa Departemen Matematika</p>
+              <ul>
+                <li>Mengoordinasikan layanan advokasi kemahasiswaan dengan Kepala Departemen Adkesma.</li>
+                <li>Menghubungkan mahasiswa dengan skema bantuan (termasuk DAUN) berdasarkan kriteria; menjaga akuntabilitas data.</li>
+                <li>Berkolaborasi membuat media sosialisasi komunikatif kepada mahasiswa Departemen Matematika (Komik AJE).</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+      <!-- Contact -->
+      <section id="contact" class="wrapper softfade">
+        <div class="inner">
+          <h2 class="major">Contact</h2>
+          <p>Saya terbuka untuk berdiskusi, berbagi ide, maupun berkolaborasi di bidang data, teknologi, dan pendidikan.</p>
+          <div class="split style1">
+            <section>
+              <form id="contact-form" action="https://formspree.io/f/mkgqorjy" method="POST">
+                <div class="fields">
+                  <div class="field half"><label for="name">Nama</label><input type="text" name="name" id="name" required /></div>
+                  <div class="field half"><label for="email">Email</label><input type="email" name="email" id="email" required /></div>
+                  <div class="field"><label for="message">Pesan</label><textarea name="message" id="message" rows="5" required></textarea></div>
+                </div>
+                <!-- Formspree extras -->
+                <input type="hidden" name="_subject" value="Portfolio — Pesan Baru" />
+                <input type="hidden" name="_language" value="id" />
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+                <ul class="actions">
+                  <li><input type="submit" value="KIRIM" class="primary" /></li>
+                  <li><span id="contact-status" class="form-status" role="status" aria-live="polite"></span></li>
+                </ul>
+              </form>
+            </section>
+            <section>
+              <ul class="contact">
+                <li class="icon solid fa-envelope"><a href="mailto:lista.kurniawati.work@gmail.com">lista.kurniawati.work@gmail.com</a></li>
+                <li class="icon brands fa-linkedin"><a href="https://linkedin.com/in/listakurniawati" target="_blank">linkedin.com/in/listakurniawati</a></li>
+                <li class="icon brands fa-github"><a href="https://github.com/listakurniawati" target="_blank">github.com/listakurniawati</a></li>
+                <li class="icon solid fa-map-marker-alt">Bekasi, Jawa Barat</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+      <div class="decor-sep"><span class="dot" aria-hidden="true"></span></div>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="inner">
+          <ul class="contact">
+            <li>&copy; <span id="year"></span> Lista Kurniawati. All rights reserved.</li>
+            <li>Designed with <a href="https://html5up.net/solid-state" target="_blank">HTML5UP Solid State</a></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // ===== Scroll-Spy: highlight nav link while scrolling =====
+    (function(){
+      const sections = ['banner','about','experience','projects','skills','organizations','certifications','contact']
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+      const navLinks = Array.from(document.querySelectorAll('#header .topnav a'));
+      const activate = (id) => { navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id)); };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if(entry.isIntersecting){ activate(entry.target.id); } });
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: 0.01 });
+      sections.forEach(sec => observer.observe(sec));
+      navLinks.forEach(a => a.addEventListener('click', () => activate(a.getAttribute('href').replace('#',''))));
+    })();
+    // ===== Formspree submit handler =====
+    (function(){
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('contact-status');
+      if(!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if(status){ status.textContent = 'Mengirim…'; status.classList.remove('success','error'); }
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if(res.ok){
+            form.reset();
+            if(status){ status.textContent = 'Terima kasih! Pesan Anda sudah terkirim.'; status.classList.add('success'); }
+          } else {
+            if(status){ status.textContent = 'Maaf, terjadi kendala. Coba lagi atau email langsung.'; status.classList.add('error'); }
+          }
+        } catch(err){
+          if(status){ status.textContent = 'Tidak dapat terhubung. Coba lagi ya.'; status.classList.add('error'); }
+        }
+      });
+    })();
+  </script>
+  </body>
+</html>
